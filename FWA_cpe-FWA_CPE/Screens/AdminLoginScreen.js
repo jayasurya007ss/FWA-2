@@ -10,14 +10,14 @@ import {
   TouchableOpacity
 } from "react-native";
 
-export  function AdminLoginScreen({navigation}) {
+export function AdminLoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
     <View style={styles.container}>
-    <Text style ={styles.text}>HFCL</Text>
+      <Text style={styles.text}>HFCL</Text>
       <Image style={styles.image} source={require("../assets/Admin.png")} />
-      <Text style ={styles.text2}>Admin Login</Text> 
+      <Text style={styles.text2}>Admin Login</Text>
       <StatusBar style="auto" />
       <View style={styles.inputView}>
         <TextInput
@@ -25,8 +25,8 @@ export  function AdminLoginScreen({navigation}) {
           placeholder="Email"
           placeholderTextColor="white"
           onChangeText={(email) => setEmail(email)}
-        /> 
-      </View> 
+        />
+      </View>
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -34,20 +34,20 @@ export  function AdminLoginScreen({navigation}) {
           placeholderTextColor="white"
           secureTextEntry={true}
           onChangeText={(password) => setPassword(password)}
-        /> 
-      </View> 
+        />
+      </View>
       <TouchableOpacity>
-        <Text style={styles.forgot_button}>Forgot Password?</Text> 
-      </TouchableOpacity> 
+        <Text style={styles.forgot_button}>Forgot Password?</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.loginBtn}
-      onPress={() => navigation.navigate('AdminHome')}>
-        <Text style={styles.loginText}>LOGIN</Text> 
-      </TouchableOpacity> 
+        onPress={() => navigation.navigate('AdminHome')}>
+        <Text style={styles.loginText}>LOGIN</Text>
+      </TouchableOpacity>
       <TouchableOpacity style={styles.user}
-  onPress={() => navigation.navigate('User')} >
-  <Text style={styles.userText}>User Login</Text>
-  </TouchableOpacity>
-    </View> 
+        onPress={() => navigation.navigate('User')} >
+        <Text style={styles.userText}>User Login</Text>
+      </TouchableOpacity>
+    </View>
   );
 }
 const styles = StyleSheet.create({
@@ -73,7 +73,7 @@ const styles = StyleSheet.create({
     flex: 1,
     padding: 10,
     marginLeft: 10,
-    color:'white',
+    color: 'white',
   },
   forgot_button: {
     height: 30,
@@ -98,31 +98,31 @@ const styles = StyleSheet.create({
     backgroundColor: "#333281",
   },
   loginText: {
-     color:'white',
+    color: 'white',
   },
   userText: {
-    color:'white'
+    color: 'white'
   },
 
-   /* HFCL Text*/
-   text: {
-    color:'#333281',
+  /* HFCL Text*/
+  text: {
+    color: '#333281',
     fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
     position: 'absolute',
     top: 40,
     width: '100%',
-   },
-   text2: {
-    color:'#333281',
+  },
+  text2: {
+    color: '#333281',
     fontSize: 20,
-    fontWeight: 'bold', 
+    fontWeight: 'bold',
     textAlign: 'center',
     position: 'relative',
     top: -20,
     width: '100%',
-   }
+  }
 });
 
 export default AdminLoginScreen;

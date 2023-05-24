@@ -1,12 +1,11 @@
 import React from 'react';
-import { TouchableOpacity, Image, View, Text, StyleSheet } from 'react-native';
+import { TouchableOpacity, Image, View,Modal, Text, StyleSheet } from 'react-native';
+
+import { useState } from 'react';
+
 
 export  function UserViewScreen({navigation}) {
-  const [isLoading, setIsLoading] = useState(false);
-
-  const handlePress = () => {
-    setIsLoading(true);
-  }
+  const [modalVisible, setModalVisible] = useState(false);
   return (
 
     <View style={styles.container}>
@@ -21,7 +20,46 @@ export  function UserViewScreen({navigation}) {
          <Text style={styles.text1}>User</Text>
       </TouchableOpacity> 
       
-    
+      <View>
+      <TouchableOpacity onPress={() => setModalVisible(true)}>
+      <Image
+        source={require('../assets/menu.png')}
+        style={styles.logo3}
+        />
+      </TouchableOpacity>
+      <Modal
+        visible={modalVisible}
+        animationType="fade"
+        transparent={true}
+        onRequestClose={() => setModalVisible(false)}>
+        <View style={styles.modalView}>
+          <TouchableOpacity onPress={() => setModalVisible(false)}>
+            <Text style={styles.modalClose}>Close</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.lable}
+        onPress={() => navigation.navigate('UserScreen')}>
+            <Text style={styles.lable}>General Status info</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.lable}
+        onPress={() => navigation.navigate('Data Usage')}>
+            <Text style={styles.lable}>Data Usage</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.lable}
+        onPress={() => navigation.navigate('CPE-Details')} >
+            <Text style={styles.lable}>CPE-Details</Text>
+        </TouchableOpacity>
+          
+          <TouchableOpacity style={styles.lable}
+        onPress={() => navigation.navigate('About US')}>
+            <Text style={styles.lable}>About Us</Text>
+          </TouchableOpacity>
+          <TouchableOpacity style={styles.lable}
+        onPress={() => navigation.navigate('Support')}>
+            <Text style={styles.lable}>Support</Text>
+          </TouchableOpacity>
+        </View>
+      </Modal>
+    </View>
 
     
     <TouchableOpacity style={styles.handleButtonPress2}
@@ -33,18 +71,7 @@ export  function UserViewScreen({navigation}) {
         />
        <Text style={styles.text2}>Settings</Text>
       
-    </TouchableOpacity>
-    
-    
-    <TouchableOpacity style={styles.handleButtonPress3}
-        onPress={() => navigation.navigate('UserMenuScreen')} >
-        <Image
-        source={require('../assets/menu.png')}
-        style={styles.logo3}
-        />
-      
-    
-    </TouchableOpacity>
+    </TouchableOpacity> 
 
 
     <TouchableOpacity style={styles.handleButtonPress4}
@@ -64,6 +91,41 @@ export  function UserViewScreen({navigation}) {
                           
 const styles = StyleSheet.create({
 
+ container:{
+//  backgroundColor:'#333281',
+},
+lable:{
+  bottom:30,
+  fontSize:20,
+  padding:5,
+  textAlign:'auto',
+  color:'#FFFFFF',
+},
+  modalView: {
+  backgroundColor: '#333281',
+    borderRadius: 20,
+    padding: 20,
+    margin: 20,
+    marginTop: 120,
+    height:300,
+  },
+  modalClose: {
+    bottom:20,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#FFFFFF',
+    alignSelf: 'flex-end',
+    marginBottom: 20,    
+  },
+  logo3: {
+    flex:1,
+    width: 50,
+    height: 50,
+    marginLeft:10,
+    position:'absolute',
+    top:0,
+  },
+
                            /* HFCL Text*/
 text: {
   color:'#333281',
@@ -71,12 +133,13 @@ text: {
   fontWeight: 'bold',
   textAlign: 'center',
   position: 'absolute',
-  top: 40,
+  top: 70,
   width: '100%',
  },
 
                              /*user*/
   handleButtonPress1: {
+    flex:1,
     flexDirection: 'row',
     alignItems: 'stretch',
   
@@ -150,19 +213,8 @@ text: {
   
   },
                                                      
-  logo3: {
-  width: 50,
-  height: 50,
-  marginLeft:10,
-  position:'absolute',
-},
+  
                             
-  text3: {
-  color: '#333281',
-  fontWeight: 'bold',
-  fontSize: 16,
- padding: 10,
-},
 
                             /*Connect*/
   handleButtonPress4: {
