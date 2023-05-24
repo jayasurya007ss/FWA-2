@@ -45,36 +45,37 @@ export function AdminViewScreen({ navigation }) {
           transparent={true}
           onRequestClose={() => setModalVisible(false)}>
           <View style={styles.modalView}>
+
             <TouchableOpacity onPress={() => setModalVisible(false)}>
               <Text style={styles.modalClose}>Close</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.lable}
-              onPress={() => navigation.navigate('UserScreen')}>
-              <Text style={styles.lable}>General Status info</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.lable}
-              onPress={() => navigation.navigate('Data Usage')}>
-              <Text style={styles.lable}>Data Usage</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.lable}
-              onPress={() => navigation.navigate('CPE-Details')} >
-              <Text style={styles.lable}>CPE-Details</Text>
+              onPress={() => { navigation.navigate('GeneralStatusInfo'); setModalVisible(false) }}>
+              <Text style={styles.lable}>Home</Text>
             </TouchableOpacity>
 
             <TouchableOpacity style={styles.lable}
-              onPress={() => navigation.navigate('AdminAboutUs')}>
-              <Text style={styles.lable}>About Us</Text>
+              onPress={() => { navigation.navigate('Data Usage'); setModalVisible(false) }}>
+              <Text style={styles.lable}>Data Usage</Text>
             </TouchableOpacity>
+
             <TouchableOpacity style={styles.lable}
-              onPress={() => navigation.navigate('Support')}>
+              onPress={() => { navigation.navigate('AdminAboutUs'); setModalVisible(false) }}>
+              <Text style={styles.lable}>About</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.lable}
+              onPress={() => { navigation.navigate('Support'); setModalVisible(false) }}>
               <Text style={styles.lable}>Support</Text>
             </TouchableOpacity>
+
           </View>
         </Modal>
       </View>
 
 
-      <TouchableOpacity style={styles.handleButtonPress4}
+      <TouchableOpacity style={styles.AdminConnectScreen}
         onPress={() => navigation.navigate('AdminConnectScreen')} >
         <Image
           source={require('../assets/connection1.png')}
@@ -87,7 +88,7 @@ export function AdminViewScreen({ navigation }) {
   );
 };
 
-
+export default AdminViewScreen;
 
 const styles = StyleSheet.create({
 
@@ -100,30 +101,8 @@ const styles = StyleSheet.create({
     top: 30,
 
   },
-  modalView: {
-    backgroundColor: '#FFFFFF',
-    borderRadius: 20,
-    padding: 20,
-    margin: 20,
-    marginTop: 120,
-    height: 300,
-  },
-  modalClose: {
-    bottom: 20,
-    fontSize: 20,
-    fontWeight: 'bold',
-    color: '#FFFFFF',
-    alignSelf: 'flex-end',
-    marginBottom: 20,
-  },
-  logo3: {
-    width: 35,
-    height: 35,
-    marginLeft: 10,
-    position: 'absolute',
-  },
 
-  /* HFCL Text*/
+  /*                                                            HFCL Text*/
   text: {
     color: '#FFFFFF',
     fontSize: 40,
@@ -134,7 +113,7 @@ const styles = StyleSheet.create({
     width: '100%',
   },
 
-  /*Admin*/
+  /*                                                                  Admin*/
   AdminScreen: {
     flexDirection: 'row',
     alignItems: 'stretch',
@@ -144,9 +123,8 @@ const styles = StyleSheet.create({
     padding: 30,
     width: 40,
     height: 40,
-    left: 20,
-    marginBottom: 0,
-    top: 755,
+    left: '2%',
+    top: '196%',
 
   },
 
@@ -165,11 +143,11 @@ const styles = StyleSheet.create({
     height: 50,
     fontSize: 12,
     padding: 0,
-    left: 3,
+    left: 9,
   },
 
 
-  /*setting*/
+  //                                                             setting
   AdminSettingsScreen: {
     textAlign: 'auto',
     flexDirection: 'row',
@@ -180,9 +158,10 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding: 30,
     marginBottom: 10,
-    top: 695,
-    left: 325,
+    top: '181%',
+    left: '39%',
   },
+
   logo1: {
     width: 35,
     height: 35,
@@ -198,9 +177,9 @@ const styles = StyleSheet.create({
     height: 50,
     fontSize: 12,
     padding: 0,
-    right: 6,
+    right: 2,
   },
-  /*Menu*/
+  //                                                              Menu
 
   lable: {
     bottom: 20,
@@ -210,14 +189,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
     color: '#333281',
   },
+
   modalView: {
     backgroundColor: '#FFFFFF',
     borderRadius: 20,
     padding: 20,
     margin: 20,
-    marginTop: 120,
-    height: 300,
+    marginTop: '30%',
+    height: '25%',
   },
+
   modalClose: {
     bottom: 20,
     fontSize: 20,
@@ -226,6 +207,7 @@ const styles = StyleSheet.create({
     alignSelf: 'flex-end',
     marginBottom: 20,
   },
+
   logo3: {
     bottom: 1,
     width: 35,
@@ -235,8 +217,8 @@ const styles = StyleSheet.create({
   },
 
 
-  /*Connection*/
-  handleButtonPress4: {
+  //                                                    Connection
+  AdminConnectScreen: {
     flexDirection: 'row',
 
     height: 50,
@@ -245,8 +227,8 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     borderRadius: 10,
     padding: 20,
-    top: 625,
-    left: 165,
+    top: '163%',
+    left: '20%',
   },
 
 
@@ -271,7 +253,7 @@ const styles = StyleSheet.create({
 
 
 });
-export default AdminViewScreen;
+
 
 
 

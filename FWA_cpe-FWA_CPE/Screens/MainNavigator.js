@@ -6,18 +6,25 @@ import { createStackNavigator } from '@react-navigation/stack';
 import LoginScreen from '../Screens/LoginScreen';
 import SplashScreen from '../Screens/SplashScreen';
 
-
+import UserScreen from './UserScreen';
 import UserLoginScreen from '../Screens/UserLoginScreen';
 import UserHomeScreen from '../Screens/UserHomeScreen';
-import UserViewScreen from './UserScreen';
-import UserSettingScreen from './UserSettingScreen';
+
 import UserConnectScreen from './UserConnectScreen';
-import UserPreferncesScreen from './UserPreferncesScreen';
+
+
+import UserSettingScreen from './UserSettingScreen';
+//                          Settings Options
+import UserPreferencesScreen from './UserPreferencesScreen';
 import UserSoftwareScreen from './UserSoftwareScreen';
 import UserBackupScreen from './UserBackupScreen';
 
+import GeneralStatusInfo from './GeneralStatusInfo'
+import Support from './Support';
 
-import AdminDNSScreen from './AdminDNSScreen';
+
+
+
 import AdminInternalStatus from './AdminInternalStatus';
 import AdminAdvanceScreen from './AdminAdvanceScreen';
 import AdminHomeScreen from '../Screens/AdminhomeScreen';
@@ -29,12 +36,25 @@ import AdminStatisticScreen from './AdminStatisticScreen';
 import AdminAboutUs from './AdminAboutUs';
 import AdminDiagnostics from './AdminDiagnostics';
 import AdminDevicesInfo from './AdminDevicesInfo';
-import AdminGps from './AdminGps';
-import AdminLogs from './AdminLogs';
+
+
+//                    Advance Options
+
 import AdminCellularScreen from './AdminCellularScreen';
 import AdminSimScreen from './AdminSimScreen';
 import AdminLanScreen from './AdminLanScreen';
-import AdminZconnectScreen from './AdminZconnectScreen';
+import AdminDNSScreen from './AdminDNSScreen';
+
+
+import AdvanceSettings from './AdvanceSettings';
+//                 Advance Settings Options
+
+import WWANSettings from './WWANSettings';
+import NATSettings from './NATSettings';
+import FIREWALLSettings from './FIREWALLSettings';
+import WLANSettings from './WLANSettings';
+import UPNP_DLNA_MDNS from './UPNP_DLNA_MDNS';
+import ACCOUNTSettings from './ACCOUNTSettings';
 
 const Stack = createStackNavigator();
 
@@ -72,11 +92,7 @@ const MainNavigator = () => {
           options={{ animationEnabled: true, header: () => null }}
           component={AdminHomeScreen}
         />
-        <Stack.Screen
-          name="UserScreen"
-          options={{ animationEnabled: true, header: () => null }}
-          component={UserViewScreen}
-        />
+
         <Stack.Screen
           name="UserSettingScreen"
           options={{ animationEnabled: true, header: () => null }}
@@ -87,6 +103,18 @@ const MainNavigator = () => {
           name="UserConnectScreen"
           options={{ animationEnabled: true, header: () => null }}
           component={UserConnectScreen}
+        />
+
+        <Stack.Screen
+          name="UserScreen"
+          options={{ animationEnabled: true, header: () => null }}
+          component={UserScreen}
+        />
+
+        <Stack.Screen
+          name="Support"
+          options={{ animationEnabled: true, header: () => null }}
+          component={Support}
         />
         <Stack.Screen
           name="AdminScreen"
@@ -111,9 +139,9 @@ const MainNavigator = () => {
           component={AdminStatisticScreen}
         />
         <Stack.Screen
-          name="UserPreferncesScreen"
+          name="UserPreferencesScreen"
           options={{ animationEnabled: true, header: () => null }}
-          component={UserPreferncesScreen}
+          component={UserPreferencesScreen}
         />
         <Stack.Screen
           name="UserSoftwareScreen"
@@ -155,17 +183,6 @@ const MainNavigator = () => {
           options={{ animationEnabled: true, header: () => null }}
           component={AdminDevicesInfo}
         />
-        <Stack.Screen
-          name="AdminGps"
-          options={{ animationEnabled: true, header: () => null }}
-          component={AdminGps}
-        />
-
-        <Stack.Screen
-          name="AdminLogs"
-          options={{ animationEnabled: true, header: () => null }}
-          component={AdminLogs}
-        />
 
         <Stack.Screen
           name="AdminCellularScreen"
@@ -191,14 +208,53 @@ const MainNavigator = () => {
           options={{ animationEnabled: true, header: () => null }}
           component={AdminLanScreen}
         />
+        <Stack.Screen
+          name="GeneralStatusInfo"
+          options={{ animationEnabled: true, header: () => null }}
+          component={GeneralStatusInfo}
+        />
+        <Stack.Screen
+          name="AdvanceSettings"
+          options={{ animationEnabled: true, header: () => null }}
+          component={AdvanceSettings}
+        />
 
         <Stack.Screen
-          name="AdminZconnectScreen"
+          name="WWANSettings"
           options={{ animationEnabled: true, header: () => null }}
-          component={AdminZconnectScreen}
+          component={WWANSettings}
+        />
+        <Stack.Screen
+          name="NATSettings"
+          options={{ animationEnabled: true, header: () => null }}
+          component={NATSettings}
+        />
+
+        <Stack.Screen
+          name="FIREWALLSettings"
+          options={{ animationEnabled: true, header: () => null }}
+          component={FIREWALLSettings}
+        />
+
+        <Stack.Screen
+          name="WLANSettings"
+          options={{ animationEnabled: true, header: () => null }}
+          component={WLANSettings}
+        />
+
+
+        <Stack.Screen
+          name="UPNP_DLNA_MDNS"
+          options={{ animationEnabled: true, header: () => null }}
+          component={UPNP_DLNA_MDNS}
+        />
+
+        <Stack.Screen
+          name="ACCOUNTSettings"
+          options={{ animationEnabled: true, header: () => null }}
+          component={ACCOUNTSettings}
         />
       </Stack.Navigator>
-
 
 
     </NavigationContainer>

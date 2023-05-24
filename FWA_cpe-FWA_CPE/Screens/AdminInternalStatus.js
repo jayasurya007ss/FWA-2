@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  Image,
-  TouchableOpacity
-} from 'react-native';
+import { View, Text, StyleSheet, } from 'react-native';
 
 export function AdminInternalStatus({ navigation }) {
 
@@ -32,10 +25,12 @@ export function AdminInternalStatus({ navigation }) {
 
 
 
-      <Text style={styles.lable5}>IPv6</Text>
+      <Text style={styles.lable4}>IPv6</Text>
       <Text style={styles.h4}></Text>
-      <Text style={styles.lable4}>IP Address :</Text>
-
+      <Text style={styles.lable5}>IP Address :</Text>
+      <Text style={styles.lable5}>Mask :</Text>
+      <Text style={styles.lable5}>Gatway :</Text>
+      <Text style={styles.lable5}>DNS :</Text>
 
 
 
@@ -43,7 +38,7 @@ export function AdminInternalStatus({ navigation }) {
 
   );
 }
-
+export default AdminInternalStatus;
 
 const styles = StyleSheet.create({
 
@@ -57,24 +52,19 @@ const styles = StyleSheet.create({
     top: 50,
 
   },
+  // Internal Status
   h1: {
     textDecorationLine: 'underline',
-    left: 60,
+    left: '30%',
     top: 10,
     color: '#FFFFFF',
     fontSize: 25,
     fontWeight: 'bold'
 
   },
-  h2: {
-    bottom: 10,
-    width: 400,
-    backgroundColor: '#FFFFFF',
-    height: 3
 
-  },
 
-  //                             CurrentSoftware
+  //                            General
   lable: {
     color: '#FFFFFF',
     fontSize: 20,
@@ -85,10 +75,18 @@ const styles = StyleSheet.create({
     marginBottom: 10,
 
   },
-  //                 Software Version
+
+  h2: {
+    bottom: 10,
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    height: 3
+
+  },
+  //                 Status,Network Name,Techonology,Time Connected,Recieved,Transmitted
   lable1: {
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     top: 10,
     marginLeft: 10,
     padding: 0,
@@ -97,7 +95,7 @@ const styles = StyleSheet.create({
 
   },
 
-  // Checking for Software Update
+  // IPv4
   lable2: {
     color: '#FFFFFF',
     fontSize: 20,
@@ -110,17 +108,17 @@ const styles = StyleSheet.create({
   },
   h3: {
     bottom: 20,
-    width: 400,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     height: 3
 
   },
 
-
+  // IP Address,Mask,Gateway,DNS
   lable3: {
 
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     top: 0,
     marginLeft: 10,
     padding: 2,
@@ -129,46 +127,8 @@ const styles = StyleSheet.create({
 
   },
 
-
-  Update_button: {
-    width: 190,
-    textAlign: 'center',
-    left: 100,
-    borderRadius: 25,
-    height: 30,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
-    backgroundColor: "#87CEEB",
-    fontWeight: 'bold',
-    fontSize: 14,
-  },
-
-  //    Software Updated,Applied,Description
+  //    IPv6
   lable4: {
-
-    color: '#FFFFFF',
-    fontSize: 13,
-    bottom: 10,
-    marginLeft: 10,
-    padding: 2,
-    textAlign: 'auto',
-    marginBottom: 15,
-
-  },
-
-  h4: {
-    bottom: 30,
-    width: 400,
-    backgroundColor: '#FFFFFF',
-    height: 3
-
-  },
-
-
-
-  //                  Last Software Update
-  lable5: {
     color: '#FFFFFF',
     fontSize: 20,
     right: 5,
@@ -178,6 +138,27 @@ const styles = StyleSheet.create({
     marginBottom: 10,
 
   },
+
+  h4: {
+    bottom: 30,
+    width: '100%',
+    backgroundColor: '#FFFFFF',
+    height: 3
+
+  },
+  //                IP Address,Mask,Gateway,DNS
+  lable5: {
+
+    color: '#FFFFFF',
+    fontSize: 15,
+    bottom: 10,
+    marginLeft: 10,
+    padding: 2,
+    textAlign: 'auto',
+    marginBottom: 15,
+
+  },
+
 });
 
-export default AdminInternalStatus;
+

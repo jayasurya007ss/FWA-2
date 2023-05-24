@@ -3,8 +3,6 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
-  Image,
   TouchableOpacity
 } from 'react-native';
 
@@ -17,39 +15,28 @@ export function AdminAboutUs({ navigation }) {
 
       <TouchableOpacity style={styles.AdminInternalStatus}
         onPress={() => navigation.navigate('AdminInternalStatus')}>
-        <Text style={styles.lable}>InternalStatus</Text>
+        <Text style={styles.lable}>Internet Status</Text>
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.AdminInternalSessions}
         onPress={() => navigation.navigate('AdminInternalSessions')}>
-        <Text style={styles.lable}>Internal Sessions</Text>
+        <Text style={styles.lable}>Internet Sessions</Text>
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.AdminDiagnostics}
         onPress={() => navigation.navigate('AdminDiagnostics')}>
         <Text style={styles.lable}>Diagnostics</Text>
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.AdminDevicesInfo}
         onPress={() => navigation.navigate('AdminDevicesInfo')}>
         <Text style={styles.lable}>Devices Info</Text>
       </TouchableOpacity>
-
-      <TouchableOpacity style={styles.AdminGps}
-        onPress={() => navigation.navigate('AdminGps')}>
-        <Text style={styles.lable}>GPS</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.AdminLogs}
-        onPress={() => navigation.navigate('AdminLogs')}>
-        <Text style={styles.lable}>Logs</Text>
-      </TouchableOpacity>
-
-
-
-
-
-
     </View>
 
   );
 }
+export default AdminAboutUs;
 
 
 const styles = StyleSheet.create({
@@ -62,6 +49,7 @@ const styles = StyleSheet.create({
     top: 30,
 
   },
+  // About
   h1: {
     top: 10,
     color: '#FFFFFF',
@@ -87,4 +75,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AdminAboutUs;
+

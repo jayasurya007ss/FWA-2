@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  Image,
-  TouchableOpacity
-} from 'react-native';
+import { View, Text, StyleSheet, } from 'react-native';
 
 export function AdminDevicesInfo({ navigation }) {
 
@@ -16,19 +9,19 @@ export function AdminDevicesInfo({ navigation }) {
 
       <Text style={styles.lable}>General</Text>
       <Text style={styles.h2}></Text>
-      <Text style={styles.lable1}>Manufacture :</Text>
-      <Text style={styles.lable1}>Modal :</Text>
-      <Text style={styles.lable1}>Device Version :</Text>
-      <Text style={styles.lable1}>SKU :</Text>
+      <Text style={styles.lable1}>Manufacture :  HFCL</Text>
+      <Text style={styles.lable1}>Modal :  FWA-CPE2023</Text>
+      <Text style={styles.lable1}>Device Version :  V0.1</Text>
+
 
 
       <Text style={styles.lable2}>Software Component</Text>
       <Text style={styles.h3}></Text>
       <Text style={styles.lable3}>OS Version :</Text>
       <Text style={styles.lable3}>Modem Firmware Version :</Text>
-      <Text style={styles.lable3}>Web UI Version :</Text>
-      <Text style={styles.lable3}>Hardware Version :</Text>
-      <Text style={styles.lable3}>PRI Version :</Text>
+      <Text style={styles.lable3}>Web UI Version :  V0.1</Text>
+      <Text style={styles.lable3}>Hardware Version :  V0.1</Text>
+
 
 
 
@@ -39,6 +32,7 @@ export function AdminDevicesInfo({ navigation }) {
   );
 }
 
+export default AdminDevicesInfo;
 
 const styles = StyleSheet.create({
 
@@ -52,6 +46,7 @@ const styles = StyleSheet.create({
     top: 30,
 
   },
+  // DevicesInfo
   h1: {
     textDecorationLine: 'underline',
     left: 100,
@@ -63,13 +58,13 @@ const styles = StyleSheet.create({
   },
   h2: {
     bottom: 10,
-    width: 400,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     height: 3
 
   },
 
-  //                             CurrentSoftware
+  //                           General
   lable: {
     color: '#FFFFFF',
     fontSize: 20,
@@ -80,10 +75,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
 
   },
-  //                 Software Version
+  //                 Manufacture,Model,Device Version
   lable1: {
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     top: 10,
     marginLeft: 10,
     padding: 0,
@@ -92,7 +87,7 @@ const styles = StyleSheet.create({
 
   },
 
-  // Checking for Software Update
+  // Software Compenents
   lable2: {
     color: '#FFFFFF',
     fontSize: 20,
@@ -105,17 +100,17 @@ const styles = StyleSheet.create({
   },
   h3: {
     bottom: 20,
-    width: 400,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     height: 3
 
   },
 
-
+  //  OS Version,Modem Firmware Version,Web UI Version,Hardware Version 
   lable3: {
 
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     top: 0,
     marginLeft: 10,
     padding: 2,
@@ -126,4 +121,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default AdminDevicesInfo;
+

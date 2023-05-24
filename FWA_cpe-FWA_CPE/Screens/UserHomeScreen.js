@@ -1,294 +1,261 @@
 import React from 'react';
-import { TouchableOpacity, Image, View,Modal, Text, StyleSheet } from 'react-native';
-
+import { TouchableOpacity, Image, View, Modal, Text, StyleSheet } from 'react-native';
 import { useState } from 'react';
-
-
-export  function UserViewScreen({navigation}) {
+export function UserViewScreen({ navigation }) {
   const [modalVisible, setModalVisible] = useState(false);
   return (
 
     <View style={styles.container}>
-    <Text style ={styles.text}>HFCL</Text>
-    <TouchableOpacity style={styles.handleButtonPress1}
-        onPress={() => navigation.navigate('UserScreen')} >
-         
-        <Image
-          source={require('../assets/user.png')}
-          style={styles.logo}
-        /> 
-         <Text style={styles.text1}>User</Text>
-      </TouchableOpacity> 
-      
-      <View>
-      <TouchableOpacity onPress={() => setModalVisible(true)}>
-      <Image
-        source={require('../assets/menu.png')}
-        style={styles.logo3}
-        />
-      </TouchableOpacity>
-      <Modal
-        visible={modalVisible}
-        animationType="fade"
-        transparent={true}
-        onRequestClose={() => setModalVisible(false)}>
-        <View style={styles.modalView}>
-          <TouchableOpacity onPress={() => setModalVisible(false)}>
-            <Text style={styles.modalClose}>Close</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.lable}
+
+      <Text style={styles.text}>HFCL</Text>
+      <TouchableOpacity style={styles.UserScreen}
         onPress={() => navigation.navigate('UserScreen')}>
-            <Text style={styles.lable}>General Status info</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.lable}
-        onPress={() => navigation.navigate('Data Usage')}>
-            <Text style={styles.lable}>Data Usage</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.lable}
-        onPress={() => navigation.navigate('CPE-Details')} >
-            <Text style={styles.lable}>CPE-Details</Text>
-        </TouchableOpacity>
-          
-          <TouchableOpacity style={styles.lable}
-        onPress={() => navigation.navigate('About US')}>
-            <Text style={styles.lable}>About Us</Text>
-          </TouchableOpacity>
-          <TouchableOpacity style={styles.lable}
-        onPress={() => navigation.navigate('Support')}>
-            <Text style={styles.lable}>Support</Text>
-          </TouchableOpacity>
-        </View>
-      </Modal>
-    </View>
 
-    
-    <TouchableOpacity style={styles.handleButtonPress2}
-        onPress={() => navigation.navigate('UserSettingScreen')} >
-      
         <Image
-        source={require('../assets/setting.png')}
-        style={styles.logo1}
+          source={require('../assets/user1.png')}
+          style={styles.logo}
         />
-       <Text style={styles.text2}>Settings</Text>
-      
-    </TouchableOpacity> 
+        <Text style={styles.text1}>User</Text>
+      </TouchableOpacity>
 
 
-    <TouchableOpacity style={styles.handleButtonPress4}
+
+
+      <TouchableOpacity style={styles.UserSettingScreen}
+        onPress={() => navigation.navigate('UserSettingScreen')} >
+
+        <Image
+          source={require('../assets/settings1.png')}
+          style={styles.logo1}
+        />
+        <Text style={styles.text2}>Settings</Text>
+
+      </TouchableOpacity>
+
+
+      <View>
+        <TouchableOpacity onPress={() => setModalVisible(true)}>
+          <Image
+            source={require('../assets/menu1.png')}
+            style={styles.logo3}
+          />
+        </TouchableOpacity>
+        <Modal
+          visible={modalVisible}
+          animationType="fade"
+          transparent={true}
+          onRequestClose={() => setModalVisible(false)}>
+          <View style={styles.modalView}>
+
+            <TouchableOpacity onPress={() => setModalVisible(false)}>
+              <Text style={styles.modalClose}>Close</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.lable}
+              onPress={() => { navigation.navigate('GeneralStatusInfo'); setModalVisible(false) }}>
+              <Text style={styles.lable}>General Status info</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.lable}
+              onPress={() => { navigation.navigate('Data Usage'); setModalVisible(false) }}>
+              <Text style={styles.lable}>Data Usage</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.lable}
+              onPress={() => { navigation.navigate('About US'); setModalVisible(false) }}>
+              <Text style={styles.lable}>About Us</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.lable}
+              onPress={() => { navigation.navigate('Support'); setModalVisible(false) }}>
+              <Text style={styles.lable}>Support</Text>
+            </TouchableOpacity>
+
+          </View>
+        </Modal>
+      </View>
+
+      <TouchableOpacity style={styles.UserConnectScreen}
         onPress={() => navigation.navigate('UserConnectScreen')} >
         <Image
-        source={require('../assets/connect.png')}
-        style={styles.logo4}
+          source={require('../assets/connection1.png')}
+          style={styles.logo4}
         />
-       <Text style={styles.text4}>Connect</Text>
-      
+        <Text style={styles.text4}>Connection</Text>
       </TouchableOpacity>
-  </View>
-);
+
+    </View>
+  );
 };
+export default UserViewScreen;
 
 
-                          
 const styles = StyleSheet.create({
 
- container:{
-//  backgroundColor:'#333281',
-},
-lable:{
-  bottom:30,
-  fontSize:20,
-  padding:5,
-  textAlign:'auto',
-  color:'#FFFFFF',
-},
-  modalView: {
-  backgroundColor: '#333281',
-    borderRadius: 20,
-    padding: 20,
-    margin: 20,
-    marginTop: 120,
-    height:300,
+  container: {
+    backgroundColor: '#333281',
+    flex: 1,
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
+    textAlign: 'auto',
+    position: 'relative',
+    top: 0,
   },
-  modalClose: {
-    bottom:20,
-    fontSize: 20,
-    fontWeight: 'bold',
+
+
+  /* HFCL Text*/
+  text: {
     color: '#FFFFFF',
-    alignSelf: 'flex-end',
-    marginBottom: 20,    
-  },
-  logo3: {
-    flex:1,
-    width: 50,
-    height: 50,
-    marginLeft:10,
-    position:'absolute',
-    top:0,
+    fontSize: 40,
+    fontWeight: 'bold',
+    textAlign: 'center',
+    position: 'absolute',
+    top: 40,
+    width: '100%',
   },
 
-                           /* HFCL Text*/
-text: {
-  color:'#333281',
-  fontSize: 40,
-  fontWeight: 'bold',
-  textAlign: 'center',
-  position: 'absolute',
-  top: 70,
-  width: '100%',
- },
-
-                             /*user*/
-  handleButtonPress1: {
-    flex:1,
+  /*User*/
+  UserScreen: {
     flexDirection: 'row',
     alignItems: 'stretch',
-  
+    textAlign: 'auto',
     justifyContent: 'center',
     borderRadius: 10,
-    padding: 40,
-    width:50,
-    height:50,
-    right:0,
-    marginBottom:0,
-    top:730,
-    
-  },
-                       
-  logo: {
-    width: 50,
-    height: 50,
-    marginRight: 0,
-   position: 'absolute',
-  },
-  
-  text1: {
-    color: '#333281',
-    fontWeight: 'bold',
-    width:65,
-    height:50,
-    fontSize: 16,
-    padding: 10,
-  },
-  
+    padding: 30,
+    width: 40,
+    height: 40,
+    left: 30,
+    marginBottom: 0,
+    top: '200%',
 
-                          /*setting*/
-  handleButtonPress2: {
+  },
+
+  logo: {
+    width: 35,
+    height: 35,
+    marginRight: 0,
+    left: 0,
+    position: 'absolute',
+  },
+
+  text1: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    width: 80,
+    height: 50,
+    fontSize: 12,
+    padding: 0,
+    left: 15,
+  },
+
+
+  /*setting*/
+  UserSettingScreen: {
+    textAlign: 'auto',
     flexDirection: 'row',
     alignItems: 'stretch',
     justifyContent: 'center',
-    width:50,
-    height:50,
-    borderRadius: 20,
-    padding: 40,
-    marginBottom:10,
-   top:648,
-    left:300,
-  },
-  logo1: {
     width: 50,
     height: 50,
+    borderRadius: 20,
+    padding: 30,
+    marginBottom: 10,
+    top: '188%',
+    left: '40%',
+  },
+
+  logo1: {
+    width: 35,
+    height: 35,
     marginRight: 10,
-   position: 'absolute',
+    position: 'absolute',
+    left: 1,
   },
 
   text2: {
-    color: '#333281',
+    color: '#FFFFFF',
     fontWeight: 'bold',
-    width:100,
-    height:50,
-    fontSize: 16,
-        padding: 10,
+    width: 70,
+    height: 50,
+    fontSize: 12,
+    padding: 0,
+    right: 6,
   },
-                                /*Menu*/
-  
-  handleButtonPress3: {
-  flexDirection: 'row',
-  alignItems: 'stretch',
-  // justifyContent: 'center',
-  borderRadius: 10,
-  padding: 30,
-  bottom:100,
-  marginTop:0,
-  left:0,
-  
-  },
-                                                     
-  
-                            
+  /*Menu*/
 
-                            /*Connect*/
-  handleButtonPress4: {
-  flexDirection: 'row',
-  
-  height:50,
-  width:50,
-  alignItems: 'stretch',
-  justifyContent: 'center',
-  borderRadius: 10,
-  padding: 40,
-  top:500,
-  left:150,
-},
+  lable: {
+    bottom: 20,
+    fontSize: 20,
+    padding: 5,
+    textAlign: 'auto',
+    fontWeight: 'bold',
+    color: '#333281',
+  },
+
+  modalView: {
+    backgroundColor: '#FFFFFF',
+    borderRadius: 20,
+    padding: 20,
+    margin: 20,
+    marginTop: 130,
+    height: 230,
+  },
+
+  modalClose: {
+    bottom: 20,
+    fontSize: 20,
+    fontWeight: 'bold',
+    color: '#333281',
+    alignSelf: 'flex-end',
+    marginBottom: 20,
+  },
+
+  logo3: {
+    bottom: 1,
+    width: 35,
+    height: 35,
+    marginLeft: 10,
+    position: 'absolute',
+  },
+
+
+  /*Connection*/
+  UserConnectScreen: {
+    flexDirection: 'row',
+    height: 50,
+    width: 50,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    borderRadius: 10,
+    padding: 20,
+    top: '173%',
+    left: '20%',
+  },
 
 
 
   logo4: {
-  width: 50,
-  height: 50,
-  marginLeft:10,
-  position:'absolute',
-},
+    width: 35,
+    height: 35,
+    marginLeft: 10,
+    position: 'absolute',
+  },
 
-text4: {
-  color: '#333281',
-  fontWeight: 'bold',
-  height:50,
-  width:100,
-  fontSize: 16,
- padding: 10,
-},
+  text4: {
+    color: '#FFFFFF',
+    fontWeight: 'bold',
+    height: 50,
+    width: 110,
+    fontSize: 12,
+    padding: 10,
+    left: 15,
+  },
+
+
 
 });
-export default UserViewScreen;
 
 
 
-// import React from 'react';
-// import {View,
-//   Text, 
-//   StyleSheet, 
-//   Button,
-//   Image,
-//   TouchableOpacity} from 'react-native';
 
-// export  function UserHomeScreen({navigation}) { 
-  
-// return ( 
-// <View style={styles.container}> 
-// <Image style={styles.image} source={require("../assets/user.png")} />
-//   <Text>UserHomeScreen</Text> 
-
-//   </View> 
-     
-//   );
-//   }
-
-
-// const styles = StyleSheet.create({
-//   container: {
-//     flex: 1,
-//     alignItems: 'center',
-//     justifyContent: 'center',
-//     textAlign:'center',
-//     top:10,
-//   },
-//   imagehome: {
-//     position:'relative',
-//     left:20,
-//     bottom:20,
-
-//   }
-// });
-
-// export default UserHomeScreen;
 

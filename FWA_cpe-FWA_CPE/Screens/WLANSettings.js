@@ -1,18 +1,18 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, } from 'react-native';
 
-export function AdminScreen({ navigation }) {
+export function WLANSettings({ navigation }) {
 
   return (
     <View style={styles.container}>
       <Image style={styles.image} source={require("../assets/user.png")} />
-      <Text>AdminScreen</Text>
+      <Text>NATSettings</Text>
 
     </View>
 
   );
 }
-export default AdminScreen;
+export default WLANSettings;
 
 const styles = StyleSheet.create({
   container: {
@@ -29,6 +29,5 @@ const styles = StyleSheet.create({
 
   }
 });
-
 
 

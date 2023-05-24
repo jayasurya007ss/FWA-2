@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  Image,
-  TouchableOpacity
-} from 'react-native';
+import { View, Text, StyleSheet, } from 'react-native';
 
 export function AdminDiagnostics({ navigation }) {
 
@@ -40,7 +33,7 @@ export function AdminDiagnostics({ navigation }) {
   );
 }
 
-
+export default AdminDiagnostics;
 const styles = StyleSheet.create({
 
 
@@ -53,9 +46,10 @@ const styles = StyleSheet.create({
     top: 30,
 
   },
+  // Diagnostics
   h1: {
     textDecorationLine: 'underline',
-    left: 100,
+    left: '35%',
     top: 10,
     color: '#FFFFFF',
     fontSize: 25,
@@ -64,13 +58,13 @@ const styles = StyleSheet.create({
   },
   h2: {
     bottom: 10,
-    width: 400,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     height: 3
 
   },
 
-  //                             CurrentSoftware
+  //                             Modem
   lable: {
     color: '#FFFFFF',
     fontSize: 20,
@@ -81,10 +75,10 @@ const styles = StyleSheet.create({
     marginBottom: 10,
 
   },
-  //                 Software Version
+  //                Mobile Number,IMEI,FW Version,ICCID
   lable1: {
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     top: 10,
     marginLeft: 10,
     padding: 0,
@@ -93,7 +87,7 @@ const styles = StyleSheet.create({
 
   },
 
-  // Checking for Software Update
+  // 5G Network
   lable2: {
     color: '#FFFFFF',
     fontSize: 20,
@@ -106,17 +100,17 @@ const styles = StyleSheet.create({
   },
   h3: {
     bottom: 20,
-    width: 400,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     height: 3
 
   },
 
-
+  // Status,Techonology,Band,Network Operator,Signal Strength,Romaing,Cell ID (ECGI)
   lable3: {
 
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 15,
     top: 0,
     marginLeft: 10,
     padding: 2,
@@ -124,56 +118,6 @@ const styles = StyleSheet.create({
     marginBottom: 15,
 
   },
-
-
-  Update_button: {
-    width: 190,
-    textAlign: 'center',
-    left: 100,
-    borderRadius: 25,
-    height: 30,
-    alignItems: "center",
-    justifyContent: "center",
-    marginTop: 20,
-    backgroundColor: "#87CEEB",
-    fontWeight: 'bold',
-    fontSize: 14,
-  },
-
-  //    Software Updated,Applied,Description
-  lable4: {
-
-    color: '#FFFFFF',
-    fontSize: 13,
-    bottom: 10,
-    marginLeft: 10,
-    padding: 2,
-    textAlign: 'auto',
-    marginBottom: 15,
-
-  },
-
-  h4: {
-    bottom: 30,
-    width: 400,
-    backgroundColor: '#FFFFFF',
-    height: 3
-
-  },
-
-
-
-  //                  Last Software Update
-  lable5: {
-    color: '#FFFFFF',
-    fontSize: 20,
-    right: 5,
-    bottom: 10,
-    padding: 10,
-    textAlign: 'auto',
-    marginBottom: 10,
-
-  },
 });
 
-export default AdminDiagnostics;
+

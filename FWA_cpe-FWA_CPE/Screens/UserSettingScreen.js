@@ -19,8 +19,8 @@ export function UserSettingScreen({ navigation }) {
       <Text style={styles.h2}></Text>
 
       <TouchableOpacity style={styles.UserPreferncesScreen}
-        onPress={() => navigation.navigate('UserPreferncesScreen')}>
-        <Text style={styles.lable}>Prefernces</Text>
+        onPress={() => navigation.navigate('UserPreferencesScreen')}>
+        <Text style={styles.lable}>Preferences</Text>
       </TouchableOpacity>
       <TouchableOpacity style={styles.UserBackupScreen}
         onPress={() => navigation.navigate('UserBackupScreen')}>
@@ -35,7 +35,7 @@ export function UserSettingScreen({ navigation }) {
 
   );
 }
-
+export default UserSettingScreen;
 
 const styles = StyleSheet.create({
   container: {
@@ -73,4 +73,4 @@ const styles = StyleSheet.create({
 
 });
 
-export default UserSettingScreen;
+

@@ -1,24 +1,21 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  Image,
-  TextInput,
-  Button,
-  TouchableOpacity
-} from "react-native";
+import { StyleSheet, Text, View, Image, TextInput, TouchableOpacity } from "react-native";
 
 export function AdminLoginScreen({ navigation }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   return (
     <View style={styles.container}>
+
       <Text style={styles.text}>HFCL</Text>
+
       <Image style={styles.image} source={require("../assets/Admin.png")} />
+
       <Text style={styles.text2}>Admin Login</Text>
+
       <StatusBar style="auto" />
+
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -27,6 +24,7 @@ export function AdminLoginScreen({ navigation }) {
           onChangeText={(email) => setEmail(email)}
         />
       </View>
+
       <View style={styles.inputView}>
         <TextInput
           style={styles.TextInput}
@@ -36,20 +34,26 @@ export function AdminLoginScreen({ navigation }) {
           onChangeText={(password) => setPassword(password)}
         />
       </View>
+
       <TouchableOpacity>
         <Text style={styles.forgot_button}>Forgot Password?</Text>
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.loginBtn}
         onPress={() => navigation.navigate('AdminHome')}>
         <Text style={styles.loginText}>LOGIN</Text>
       </TouchableOpacity>
+
       <TouchableOpacity style={styles.user}
         onPress={() => navigation.navigate('User')} >
         <Text style={styles.userText}>User Login</Text>
       </TouchableOpacity>
+
     </View>
   );
 }
+export default AdminLoginScreen;
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,
@@ -125,4 +129,3 @@ const styles = StyleSheet.create({
   }
 });
 
-export default AdminLoginScreen;

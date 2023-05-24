@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  StyleSheet,
-  Button,
-  Image,
-  TouchableOpacity
-} from 'react-native';
+import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
 
 export function AdminLogs({ navigation }) {
 
@@ -46,6 +39,7 @@ export function AdminLogs({ navigation }) {
 
   );
 }
+export default AdminLogs;
 
 
 const styles = StyleSheet.create({
@@ -187,4 +181,3 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AdminLogs;

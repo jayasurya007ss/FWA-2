@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { View, Switch, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
-const App = () => {
+const App = ({ navigation }) => {
   const [isEnabled, setIsEnabled] = useState(false);
   const toggleSwitch = () => setIsEnabled(previousState => !previousState);
 
@@ -11,8 +11,7 @@ const App = () => {
 
       <Text style={styles.lable}>IPv4</Text>
       <Text style={styles.h2}></Text>
-      <Text style={styles.lable1}>IP Pass through is always used. the network IP
-        address is assigned to your computer,not to your devices</Text>
+      <Text style={styles.lable1}>IP passthrough is always used. IP address assigned is of the computer.</Text>
       <Text style={styles.lable1}>IP Address:</Text>
 
       <Text style={styles.lable2}>IPv6</Text>
@@ -35,7 +34,9 @@ const App = () => {
         <Text style={styles.Save_button}>Save Changes</Text>
       </TouchableOpacity>
 
-
+      <TouchableOpacity  onPress={() => navigation.navigate('AdvanceSettings')}>
+        <Text style={styles.advance_button}>Advance Settings</Text>
+      </TouchableOpacity>
 
 
     </View>
@@ -43,14 +44,15 @@ const App = () => {
 
   );
 };
+export default App;
 
 const styles = StyleSheet.create({
 
 
   switch: {
 
-    bottom: 65,
-    left: 350,
+    bottom: '7.5%',
+    left: '90%',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -65,7 +67,7 @@ const styles = StyleSheet.create({
   },
   h1: {
     textDecorationLine: 'underline',
-    left: 160,
+    left: '43%',
     top: 10,
     color: '#FFFFFF',
     fontSize: 25,
@@ -74,7 +76,7 @@ const styles = StyleSheet.create({
   },
   h2: {
     bottom: 10,
-    width: 400,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     height: 3
 
@@ -94,7 +96,7 @@ const styles = StyleSheet.create({
   //                 Software Version
   lable1: {
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 17,
     top: 10,
     marginLeft: 10,
     padding: 0,
@@ -117,7 +119,7 @@ const styles = StyleSheet.create({
   },
   h3: {
     top: 5,
-    width: 400,
+    width: '100%',
     backgroundColor: '#FFFFFF',
     height: 3
 
@@ -127,7 +129,7 @@ const styles = StyleSheet.create({
   lable3: {
 
     color: '#FFFFFF',
-    fontSize: 13,
+    fontSize: 17,
     top: 20,
     marginLeft: 10,
     padding: 2,
@@ -138,7 +140,7 @@ const styles = StyleSheet.create({
 
 
   Save_button: {
-    width: 190,
+    width:  190,
     textAlign: 'center',
     left: 10,
     borderRadius: 25,
@@ -148,10 +150,22 @@ const styles = StyleSheet.create({
     bottom: 10,
     backgroundColor: "#87CEEB",
     fontWeight: 'bold',
-    fontSize: 14,
+    fontSize: 17,
   },
 
+  advance_button: {
+    width: 190,
+    textAlign: 'center',
+    left: 10,
+    borderRadius: 25,
+    height: 30,
+    alignItems: "center",
+    justifyContent: "center",
+    top:  '100%',
+    backgroundColor: "#87CEEB",
+    fontWeight: 'bold',
+    fontSize: 17,
+  },
 });
 
 
-export default App;

@@ -1,41 +1,33 @@
-
-
-
 import React from 'react';
-import {View,
-  Text, 
-  StyleSheet, 
-  Button,
-  Image,
-  TouchableOpacity} from 'react-native';
+import { View, Text, StyleSheet, Image, } from 'react-native';
 
-export  function UserConnectScreen({navigation}) { 
-  
-return ( 
-<View style={styles.container}> 
-<Image style={styles.image} source={require("../assets/user.png")} />
-  <Text>UserConnectScreen</Text> 
+export function UserConnectScreen({ navigation }) {
 
-  </View> 
-     
+  return (
+    <View style={styles.container}>
+      <Image style={styles.image} source={require("../assets/user.png")} />
+      <Text>UserConnectScreen</Text>
+
+    </View>
+
   );
-  }
-
+}
+export default UserConnectScreen;
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
     alignItems: 'center',
     justifyContent: 'center',
-    textAlign:'center',
-    top:10,
+    textAlign: 'center',
+    top: 10,
   },
   imagehome: {
-    position:'relative',
-    left:20,
-    bottom:20,
+    position: 'relative',
+    left: 20,
+    bottom: 20,
 
   }
 });
 
-export default UserConnectScreen;
+

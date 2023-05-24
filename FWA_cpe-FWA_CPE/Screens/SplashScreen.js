@@ -1,6 +1,6 @@
-import React, {useRef, useState, useEffect} from 'react';
-import {View, StyleSheet, Text,Image} from 'react-native';
-import  { Component } from 'react-native'
+import React, { useRef, useState, useEffect } from 'react';
+import { View, StyleSheet, Text, Image } from 'react-native';
+
 
 const SplashScreen = props => {
   const [authLoaded, setAuthLoaded] = useState(false);
@@ -19,12 +19,12 @@ const SplashScreen = props => {
 
   return (
     <View style={styles.root}>
-      <Text style ={styles.text}>HFCL</Text>
-      <Image 
-  source={require('../assets/5G.png')} 
-  style={{ width: 150, height: 150, justifyContent:'center',alignItems:'center' }}
-/>
-<Text style={styles.text2}>Z-CONNECT</Text>
+      <Text style={styles.text}>HFCL</Text>
+      <Image
+        source={require('../assets/5G.png')}
+        style={{ width: 150, height: 150, justifyContent: 'center', alignItems: 'center' }}
+      />
+      <Text style={styles.text2}>Z-CONNECT</Text>
     </View>
   );
 };
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
   },
   /* HFCL Text*/
   text: {
-    color:'#333281',
+    color: '#333281',
     fontSize: 40,
     fontWeight: 'bold',
     textAlign: 'center',
@@ -46,11 +46,11 @@ const styles = StyleSheet.create({
     width: '100%',
   },
   /* Z-Connect*/
-  text2:{
-    color:'#333281',
-    fontSize:30,
-    fontWeight:'bold',
-    position:'relative',
+  text2: {
+    color: '#333281',
+    fontSize: 30,
+    fontWeight: 'bold',
+    position: 'relative',
     top: 40,
   },
 
